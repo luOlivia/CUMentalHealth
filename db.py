@@ -11,7 +11,7 @@ db = SQLAlchemy()
 
 
 association_table = db.Table('association', db.Model.metadata,
-    db.Column('place_id', db.Integer, db.ForeignKey('place.id')),
+    db.Column('places_id', db.Integer, db.ForeignKey('places.id')),
     #db.Column('location_id', db.Integer, db.ForeignKey('location.id'))
 )
 
@@ -56,35 +56,12 @@ class Place(db.Model):
 			'hours': self.hours,
 			'address': self.address,
 			'website': self.website,
-			'category': self.category,
-			'time': self.time,
-			'location': self.location,
+			'types': self.category,
+			'times': self.time,
+			'locations': self.location,
 			'coordinates': self.coordinates
 
 		}
-'''
-class Location(db.Model):
-	__tablename__ = 'location'
-	id = db.Column(db.Integer, primary_key = True)
-	building = db.Column(db.String, nullable = False)
-	area = db.Column(db.String, nullable = False)
-	coor = db.Column(db.Integer, nullable = False)
-	place = db.relationship('Place', secondary=association_table)
-
-
-	def __init__(self, **kwargs):
-		self.building = kwargs.get('building', '')
-		self.area = kwargs.get('area', '')
-		self.coor = kwargs.get('coor', 0)
-
-	def serialize(self):
-		return {
-			'id': self.id,
-			'building': self.building,
-			'area': self.area,
-			'coor': self.coor
-		}
-'''
 
 #to import csv data into databse
 
@@ -115,5 +92,3 @@ for cornellplace in cornellplaces:
     row = Place(**cornellplace)
     session.add(row)
 session.commit()
-
-         #print(row['first_name'], row['last_name'])
