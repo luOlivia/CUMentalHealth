@@ -25,7 +25,7 @@ class locationVC: UIViewController {
     
     var titleText: UILabel!
     var hourLabel: UILabel!
-    var descripHours: UILabel!
+    var descripHours: UITextView!
     var addressLabel: UILabel!
     var phoneButton: UIButton!
     var webButton: UIButton!
@@ -74,11 +74,11 @@ class locationVC: UIViewController {
         map.addAnnotation(annotation)
         view.addSubview(map)
         
-        descripHours = UILabel()
+        descripHours = UITextView()
         descripHours.translatesAutoresizingMaskIntoConstraints = false
         descripHours.font = UIFont.systemFont(ofSize: 18)
-        descripHours.numberOfLines = 0
-        descripHours.text = "Hours: \n\(hours) \n\nWebsite: \(website)\n\nAddress: \(address)\n\nPhone: \(phone)";
+        descripHours.text = "\(hours)";
+        descripHours.isEditable = false
         view.addSubview(descripHours)
         
         addressLabel = UILabel()
@@ -94,6 +94,13 @@ class locationVC: UIViewController {
         titleText.font = UIFont.boldSystemFont(ofSize: titleText.font.pointSize)
         titleText.text = "\(name)"
         view.addSubview(titleText)
+        
+        hourText = UILabel()
+        hourText.translatesAutoresizingMaskIntoConstraints = false
+        hourText.font = UIFont.systemFont(ofSize: 20)
+        hourText.font = UIFont.boldSystemFont(ofSize: titleText.font.pointSize)
+        hourText.text = "Hours:"
+        view.addSubview(hourText)
         
         webButton = UIButton()
         webButton.translatesAutoresizingMaskIntoConstraints = false
@@ -175,9 +182,15 @@ class locationVC: UIViewController {
                 ])
         }
         NSLayoutConstraint.activate([
-            descripHours.topAnchor.constraint(equalTo: titleText.bottomAnchor, constant: 100),
+            hourText.topAnchor.constraint(equalTo: webButton.bottomAnchor, constant: 24),
+            hourText.bottomAnchor.constraint(equalTo: webButton.bottomAnchor, constant: 48),
+            hourText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            hourText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)
+            ])
+        NSLayoutConstraint.activate([
+            descripHours.topAnchor.constraint(equalTo: hourText.bottomAnchor, constant: -4),
             descripHours.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            descripHours.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            descripHours.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
             descripHours.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)
             ])
         //        NSLayoutConstraint.activate([

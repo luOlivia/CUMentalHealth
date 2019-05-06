@@ -26,8 +26,9 @@ class locationCell: UITableViewCell {
         contentView.addSubview(locationImage)
         name = UILabel()
         name.translatesAutoresizingMaskIntoConstraints = false
-        name.font = UIFont.systemFont(ofSize: 18)
+        name.font = UIFont.systemFont(ofSize: 19)
         name.font = UIFont.boldSystemFont(ofSize: name.font.pointSize)
+        name.numberOfLines = 0
         contentView.addSubview(name)
         locationLabel = UILabel()
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -53,13 +54,13 @@ class locationCell: UITableViewCell {
             locationImage.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 128)
             ])
         NSLayoutConstraint.activate([
-            name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            name.topAnchor.constraint(equalTo: locationImage.bottomAnchor, constant: 8),
+            name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            name.topAnchor.constraint(equalTo: locationImage.bottomAnchor, constant: 6),
             name.heightAnchor.constraint(equalToConstant: labelHeight)
             ])
         NSLayoutConstraint.activate([
-            locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            locationLabel.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 2),
+            locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            locationLabel.topAnchor.constraint(equalTo: name.bottomAnchor, constant: -2),
             locationLabel.heightAnchor.constraint(equalToConstant: labelHeight)
             ])
     }
