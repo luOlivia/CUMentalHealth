@@ -56,12 +56,16 @@ class Place(db.Model):
 			'hours': self.hours,
 			'address': self.address,
 			'website': self.website,
-			'types': self.category,
-			'times': self.time,
-			'locations': self.location,
-			'coordinates': self.coordinates
+			'types': stoArray(self.category),
+			'times': stoArray(self.time),
+			'locations': stoArray(self.location),
+			'coordinates': stoArray(self.coordinates)
 
 		}
+
+def stoArray(original):
+	ugh = original.replace(']','').replace('[','')
+	return ugh
 
 #to import csv data into databse
 
