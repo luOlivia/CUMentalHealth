@@ -22,4 +22,4 @@ Backend
   - Deployed to Google Cloud
  
 # Screen Images
-[[https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2360.PNG|alt=img1]]
+[https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2360.PNG|alt=img1]
