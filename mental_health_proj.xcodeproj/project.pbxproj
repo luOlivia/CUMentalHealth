@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		110FE1782272980C0079F221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FE1772272980C0079F221 /* AppDelegate.swift */; };
+		110FE17A2272980C0079F221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FE1792272980C0079F221 /* ViewController.swift */; };
+		110FE17F227298100079F221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110FE17E227298100079F221 /* Assets.xcassets */; };
+		110FE182227298100079F221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110FE180227298100079F221 /* LaunchScreen.storyboard */; };
+		110FE18A22729A0B0079F221 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FE18922729A0B0079F221 /* Location.swift */; };
+		110FE18C2272A0D50079F221 /* locationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FE18B2272A0D50079F221 /* locationCell.swift */; };
+		110FE18E2272A2630079F221 /* locationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FE18D2272A2630079F221 /* locationVC.swift */; };
+		11961A99227E5DFF008213E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11961A98227E5DFF008213E1 /* NetworkManager.swift */; };
+		B1812ACC2272FD9B00D428FC /* FilterCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812ACB2272FD9B00D428FC /* FilterCollectionViewFlowLayout.swift */; };
+		B1812ACE2272FDFE00D428FC /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812ACD2272FDFE00D428FC /* FilterCollectionViewCell.swift */; };
+		B1812AD02273006700D428FC /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812ACF2273006700D428FC /* Setup.swift */; };
+		F01D71359A930BA43AB2C487 /* Pods_mental_health_proj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C01DA87499477075E9F4F3AB /* Pods_mental_health_proj.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		110FE1742272980C0079F221 /* mental_health_proj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mental_health_proj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		110FE1772272980C0079F221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		110FE1792272980C0079F221 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		110FE17E227298100079F221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		110FE181227298100079F221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		110FE183227298100079F221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		110FE18922729A0B0079F221 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		110FE18B2272A0D50079F221 /* locationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationCell.swift; sourceTree = "<group>"; };
+		110FE18D2272A2630079F221 /* locationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationVC.swift; sourceTree = "<group>"; };
+		11961A98227E5DFF008213E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B1812ACB2272FD9B00D428FC /* FilterCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		B1812ACD2272FDFE00D428FC /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1812ACF2273006700D428FC /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		B5C8BE38D4114106ACD11BF9 /* Pods-mental_health_proj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mental_health_proj.debug.xcconfig"; path = "Target Support Files/Pods-mental_health_proj/Pods-mental_health_proj.debug.xcconfig"; sourceTree = "<group>"; };
+		C01DA87499477075E9F4F3AB /* Pods_mental_health_proj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mental_health_proj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E677B37EEEEA04A9E75EDDA9 /* Pods-mental_health_proj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mental_health_proj.release.xcconfig"; path = "Target Support Files/Pods-mental_health_proj/Pods-mental_health_proj.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		110FE1712272980C0079F221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F01D71359A930BA43AB2C487 /* Pods_mental_health_proj.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		110FE16B2272980B0079F221 = {
+			isa = PBXGroup;
+			children = (
+				110FE1762272980C0079F221 /* mental_health_proj */,
+				110FE1752272980C0079F221 /* Products */,
+				476E8C1BB9A7F51455D8B1BF /* Pods */,
+				2EE8E87C0F9095869F04D4F9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		110FE1752272980C0079F221 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				110FE1742272980C0079F221 /* mental_health_proj.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		110FE1762272980C0079F221 /* mental_health_proj */ = {
+			isa = PBXGroup;
+			children = (
+				110FE1772272980C0079F221 /* AppDelegate.swift */,
+				110FE1792272980C0079F221 /* ViewController.swift */,
+				B1812ACF2273006700D428FC /* Setup.swift */,
+				11961A98227E5DFF008213E1 /* NetworkManager.swift */,
+				B1812ACB2272FD9B00D428FC /* FilterCollectionViewFlowLayout.swift */,
+				B1812ACD2272FDFE00D428FC /* FilterCollectionViewCell.swift */,
+				110FE18D2272A2630079F221 /* locationVC.swift */,
+				110FE18B2272A0D50079F221 /* locationCell.swift */,
+				110FE18922729A0B0079F221 /* Location.swift */,
+				110FE17E227298100079F221 /* Assets.xcassets */,
+				110FE180227298100079F221 /* LaunchScreen.storyboard */,
+				110FE183227298100079F221 /* Info.plist */,
+			);
+			path = mental_health_proj;
+			sourceTree = "<group>";
+		};
+		2EE8E87C0F9095869F04D4F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C01DA87499477075E9F4F3AB /* Pods_mental_health_proj.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		476E8C1BB9A7F51455D8B1BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8BE38D4114106ACD11BF9 /* Pods-mental_health_proj.debug.xcconfig */,
+				E677B37EEEEA04A9E75EDDA9 /* Pods-mental_health_proj.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		110FE1732272980C0079F221 /* mental_health_proj */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 110FE186227298100079F221 /* Build configuration list for PBXNativeTarget "mental_health_proj" */;
+			buildPhases = (
+				8FAD62D41DFEE12881BD060E /* [CP] Check Pods Manifest.lock */,
+				110FE1702272980C0079F221 /* Sources */,
+				110FE1712272980C0079F221 /* Frameworks */,
+				110FE1722272980C0079F221 /* Resources */,
+				8615E7C93394E1F243F44AD1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mental_health_proj;
+			productName = mental_health_proj;
+			productReference = 110FE1742272980C0079F221 /* mental_health_proj.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		110FE16C2272980C0079F221 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Mitchell Lin";
+				TargetAttributes = {
+					110FE1732272980C0079F221 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 110FE16F2272980C0079F221 /* Build configuration list for PBXProject "mental_health_proj" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 110FE16B2272980B0079F221;
+			productRefGroup = 110FE1752272980C0079F221 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				110FE1732272980C0079F221 /* mental_health_proj */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		110FE1722272980C0079F221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110FE182227298100079F221 /* LaunchScreen.storyboard in Resources */,
+				110FE17F227298100079F221 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8615E7C93394E1F243F44AD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mental_health_proj/Pods-mental_health_proj-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mental_health_proj/Pods-mental_health_proj-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FAD62D41DFEE12881BD060E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mental_health_proj-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		110FE1702272980C0079F221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11961A99227E5DFF008213E1 /* NetworkManager.swift in Sources */,
+				110FE18A22729A0B0079F221 /* Location.swift in Sources */,
+				110FE18E2272A2630079F221 /* locationVC.swift in Sources */,
+				B1812ACC2272FD9B00D428FC /* FilterCollectionViewFlowLayout.swift in Sources */,
+				110FE17A2272980C0079F221 /* ViewController.swift in Sources */,
+				110FE18C2272A0D50079F221 /* locationCell.swift in Sources */,
+				110FE1782272980C0079F221 /* AppDelegate.swift in Sources */,
+				B1812ACE2272FDFE00D428FC /* FilterCollectionViewCell.swift in Sources */,
+				B1812AD02273006700D428FC /* Setup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		110FE180227298100079F221 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				110FE181227298100079F221 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		110FE184227298100079F221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		110FE185227298100079F221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		110FE187227298100079F221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C8BE38D4114106ACD11BF9 /* Pods-mental_health_proj.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4RCN45MBZ5;
+				INFOPLIST_FILE = mental_health_proj/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mitchell.mental-health-proj";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		110FE188227298100079F221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E677B37EEEEA04A9E75EDDA9 /* Pods-mental_health_proj.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4RCN45MBZ5;
+				INFOPLIST_FILE = mental_health_proj/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mitchell.mental-health-proj";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		110FE16F2272980C0079F221 /* Build configuration list for PBXProject "mental_health_proj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110FE184227298100079F221 /* Debug */,
+				110FE185227298100079F221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		110FE186227298100079F221 /* Build configuration list for PBXNativeTarget "mental_health_proj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110FE187227298100079F221 /* Debug */,
+				110FE188227298100079F221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 110FE16C2272980C0079F221 /* Project object */;
+}
