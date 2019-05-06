@@ -22,4 +22,9 @@ Backend
   - Deployed to Google Cloud
  
 # Screen Images
-[https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2360.PNG]
+![Home Page](https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2360.PNG)
+![Filter View](https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2362.PNG)
+![Multiple Filters](https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2366.PNG)
+![Detail View](https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2364.PNG)
+![Phone Button](https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2365.PNG)
+![Search Bar](https://github.com/luOlivia/CUMentalHealth/blob/master/IMG_2367.PNG)
