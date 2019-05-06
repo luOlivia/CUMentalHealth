@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var tableView: UITableView!
     var locations: [Location]! = []
     var activeLocations: [Location] = []
+    var updatedActiveLocations: [Location] = []
     let reuseIdentifier = "songCellReuse"
     var containerView: UIView!
     
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchBar.showsSearchResultsButton = true
         searchBar.showsCancelButton = false
         searchBar.placeholder = placeholderText
-        searchBar.tintColor = UIColor(red:1, green: 0.5, blue:0.5, alpha: 1)
+        searchBar.tintColor = .white
         searchBar.barTintColor = UIColor(red:1, green: 0.5, blue: 0.5, alpha: 1)
         searchBar.backgroundColor = UIColor(red:1, green: 0.5, blue: 0.5, alpha: 1)
         searchBar.text = currentSearchText
@@ -78,10 +79,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        nav.tintColor = UIColor(red:1, green: 0.3, blue: 0.3, alpha: 1)
 //        nav.barTintColor = UIColor(red:1, green: 0.3, blue: 0.3, alpha: 1)
 //        view.addSubview(nav)
-        
-        for filter in filters {
-            changeFilter(filter: filter, shouldRemove: false)
-        }
         
         tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         NSLayoutConstraint.activate([
             filterCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            filterCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            filterCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             filterCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             //            filterCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
             filterCollectionView.heightAnchor.constraint(equalToConstant: filterCollectionViewHeight)])
@@ -122,42 +119,54 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if (currentSearchText.count < 3) {
-            searchBar.prompt = "Please enter more text!"
-        }
-        else if (currentSearchText.lowercased() == "clear") {
+        searchBar.reloadInputViews()
+        if (currentSearchText.lowercased() == "") {
             for filter in filters {
                 changeFilter(filter: filter, shouldRemove: false)
                 tableView.reloadData()
             }
+            self.searchBar.prompt = ""
+            self.currentSearchText = ""
+        }
+        else if (currentSearchText.count < 3) {
+            searchBar.prompt = "Please enter more text!"
         }
         else {
+            self.searchBar.prompt = ""
             //print("a")
-            for filter in filters {
-                //print("b")
-                //print(filter.filterTitle)
-                //print(filter.filterTitle.lowercased())
-                if (currentSearchText.lowercased().contains(filter.filterTitle.lowercased()) || filter.filterTitle.lowercased().contains(currentSearchText.lowercased())) {
-                    //print(filter.filterTitle + " passes")
+//            for filter in filters {
+//                //print("b")
+//                //print(filter.filterTitle)
+//                //print(filter.filterTitle.lowercased())
+//                if (currentSearchText.lowercased().contains(filter.filterTitle.lowercased()) || filter.filterTitle.lowercased().contains(currentSearchText.lowercased())) {
+//                    //print(filter.filterTitle + " passes")
+//                }
+//                else {
+//                    //print(filter.filterTitle + " should be removed")
+//                    changeFilter(filter: filter, shouldRemove: true)
+//                }
+//            }
+            updatedActiveLocations = []
+            for location in activeLocations {
+                if (currentSearchText.lowercased().contains(location.name.lowercased()) || location.name.lowercased().contains(currentSearchText.lowercased())) {
+                    updatedActiveLocations.append(location)
                 }
-                else {
-                    //print(filter.filterTitle + " should be removed")
-                    changeFilter(filter: filter, shouldRemove: true)
-                    tableView.reloadData()
-                }
+                self.activeLocations = updatedActiveLocations
             }
+            tableView.reloadData()
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.showsCancelButton = false
-        if (activeLocations.count < locations.count) {
-            self.searchBar.prompt = "Type clear and press search to clear filters!"
-        }
-        else {
+        if (currentSearchText == "") {
             self.searchBar.prompt = ""
+            self.currentSearchText = ""
+            for filter in filters {
+                changeFilter(filter: filter, shouldRemove: false)
+                tableView.reloadData()
+            }
         }
-        self.currentSearchText = ""
         self.searchBar.resignFirstResponder()
     }
     
@@ -284,7 +293,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height: CGFloat = 192
+        let height: CGFloat = 180
         return height
     }
     
@@ -316,9 +325,12 @@ extension ViewController: UITableViewDelegate {
                 var fixedcoords: [Double] = []
                 let coords = locationstructs.coordinates.split(separator: ",")
                 for coord in coords {
-
-                    fixedcoords.append(Double(coord) ?? 1)
+                    let fix = coord.replacingOccurrences(of: " ", with: "")
+                    print(fix)
+                    fixedcoords.append(Double(fix) ?? 1)
+                    
                 }
+                print(fixedcoords)
                 var fixedtimes: [Time] = []
                 let times = locationstructs.times.split(separator: ",")
                 for time in times {
@@ -341,12 +353,13 @@ extension ViewController: UITableViewDelegate {
                 if (locationstructs.types.contains("emerg")){
                     fixedtypes.append(.emergency)
                 }
-                if (locationstructs.types.contains("lets")){
+                if (locationstructs.types.contains("letstalk")){
                     fixedtypes.append(.letstalk)
                 }
                 if (locationstructs.types.contains("ears")){
                     fixedtypes.append(.ears)
                 }
+                print(locationstructs.types)
                 var fixedlocations: [LocationType] = []
                 let locations = locationstructs.locations.split(separator: ",")
                 for location in locations {
@@ -358,10 +371,23 @@ extension ViewController: UITableViewDelegate {
                         fixedlocations.append(.central)
                     }
                 }
+                
+                var newname: String = locationstructs.name
+                if (locationstructs.name.contains("and Interven")){
+                    newname = locationstructs.name.replacingOccurrences(of: "and Intervention", with: "")
+                }
+                if (locationstructs.name.contains("Education")){
+                    newname = locationstructs.name.replacingOccurrences(of: "Education Group", with: "")
+                }
+                if (locationstructs.name.contains("(Accept")){
+                    newname = locationstructs.name.replacingOccurrences(of: " (Acceptance & Commitment Therapy)", with: "")
+                }
+                if (locationstructs.name.contains("Adulting") || locationstructs.name.contains("Mindful")){
+                    newname = locationstructs.name.replacingOccurrences(of: "'", with: "")
+                }
                 let replace = locationstructs.hours.replacingOccurrences(of: "\\n", with: "\n")
-                let current = Location(name: locationstructs.name, image: locationstructs.img, phone: locationstructs.phone, hours: replace, address: locationstructs.address, website: locationstructs.website, types: fixedtypes, times: fixedtimes, locations: fixedlocations, coords: fixedcoords)
+                let current = Location(name: newname, image: locationstructs.img, phone: locationstructs.phone, hours: replace, address: locationstructs.address, website: locationstructs.website, types: fixedtypes, times: fixedtimes, locations: fixedlocations, coords: fixedcoords)
                 //print(current.times)
-                print(current.hours)
                 print(locationstructs.img)
                 self.locations.append(current)
             }
