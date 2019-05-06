@@ -12,7 +12,7 @@ Upon starting the app, the user is presented with a list of all resources in our
 iOS
   - Receives data for resources from API request
   - Uses UICollectionView for filters and UITableView for resources
-  - Uses UISearchBar for searching name of resource or filter
+  - Uses UISearchBar for searching name of filter
   - Upon clicking table cells, navigates to Modal View Controller that displays specific information + location on map
   - Modal View Controllers contain 2 buttons to open website or call phone number listed
   
